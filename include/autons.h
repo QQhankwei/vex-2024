@@ -18,7 +18,7 @@ void B5_right();
 
 void skills();
 void PIDtest();
-
+void autoarm();
 void drive_test();
 void turn_test();
 void swing_test();

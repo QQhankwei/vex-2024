@@ -362,13 +362,21 @@ void usercontrol(void)
   if (!ran_auton) 
   {
     intakeCylander = 0;  
-    airspace = false;    
+    airspace = false;  
+    hang1.spin(forward, 6, volt);
+    wait(0.2,sec);
+    hang1.stop(hold);
+    wait(0.05,sec);
+    hang1.resetPosition();
+  
   }
   else 
   {
     intakeCylander = 1;  
     airspace = true;
+    hang1.resetPosition();
   }
+
 
   task notetask(autonoteTask,0);
   //---------------------------------------------------

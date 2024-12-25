@@ -18,8 +18,6 @@ int autonoteTask() {
             selectedTeamColor = vex::color::black; // 無隊伍（禁用）
             Optical.setLightPower(0, percent);    // 關閉燈光
         }
-
-        // ============================== 自動控制最高優先級 ================================
         if (Optical.isNearObject()) {
             
 
@@ -30,8 +28,9 @@ int autonoteTask() {
                     // 紅隊邏輯：非紅色物件排除
                     
                     if (detectedColor == vex::color::blue) {
+                        
                         pushCylinder = 1;
-                        wait(0.4, sec);
+                        wait(0.6, sec);
                         pushCylinder = 0;
                     } else {
 
@@ -43,8 +42,9 @@ int autonoteTask() {
                     if (detectedColor != vex::color::red) {
                         pushCylinder = 0;
                     } else {
+                        
                         pushCylinder = 1;
-                        wait(0.4, sec);
+                        wait(0.6, sec);
                         pushCylinder = 0; // 排除紅色物件
                     }
                 }

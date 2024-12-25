@@ -23,7 +23,7 @@ extern digital_out intakeCylander;
 extern digital_out pushCylinder;
 extern digital_out hookCylinder;
 extern vex::vision Vision1;
-extern vex::vision Vision2;
+extern vex::vision Vision2; 
 
 
 
