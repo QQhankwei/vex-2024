@@ -57,8 +57,10 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## Acknowledgements
 
 - VEX Robotics
+- HappyrobotTaipei
 - Team 88168A for their hard work and dedication to the project.
-- All supporters, mentors, and volunteers who made this project possible.
+- R.T.1.3
+- Lego Lau mo 
 
 ---
 
