@@ -1,4 +1,5 @@
 #include "vex.h"
+#include "note.h"
 
 void driveTime(int ms){
   chassis.drive_with_voltage(12,12);

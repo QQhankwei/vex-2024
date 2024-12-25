@@ -380,9 +380,9 @@ void Drive::control_tank(float percentage = 100){
   DriveL.spin(fwd, to_volt(leftthrottle), volt);
   DriveR.spin(fwd, to_volt(rightthrottle), volt);
   if(leftthrottle == 0)
-    DriveL.stop(brake);
+    DriveL.stop(coast);
   if(rightthrottle == 0)
-    DriveR.stop(brake);
+    DriveR.stop(coast);
 }
 
 int Drive::position_track_task(){
