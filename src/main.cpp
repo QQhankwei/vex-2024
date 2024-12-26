@@ -170,12 +170,12 @@ void pre_auton(void) {
         if (i == 1) Brain.Screen.printAt(x + 10, y + 60, "R3_right ");
         if (i == 2) Brain.Screen.printAt(x + 10, y + 60, "RW_left");
         if (i == 3) Brain.Screen.printAt(x + 10, y + 60, "R5_left");
-        if (i == 4) Brain.Screen.printAt(x + 10, y + 60, "skills9");
+        if (i == 4) Brain.Screen.printAt(x + 10, y + 60, "skills ");
         if (i == 5) Brain.Screen.printAt(x + 10, y + 60, "BW_left");
         if (i == 6) Brain.Screen.printAt(x + 10, y + 60, "B3_left");
         if (i == 7) Brain.Screen.printAt(x + 10, y + 60, "BW_right");
         if (i == 8) Brain.Screen.printAt(x + 10, y + 60, "B5_right");
-        if (i == 9) Brain.Screen.printAt(x + 10, y + 60, "   ");
+        if (i == 9) Brain.Screen.printAt(x + 10, y + 60, "        ");
       }
     }
 
@@ -241,7 +241,7 @@ void autonomous(void) {
     B5_right();
     break;
   case 9:
-    holonomic_odom_test();
+    odom_test();
     break;
   }
   airspace = true; // 确保 airspace 被设置为 true
@@ -274,6 +274,7 @@ int momogoTask(){
 }
 
 int intakeControlTask() {
+  intake.setMaxTorque(100, percent);
     while (true) {
         // ================================手動控制次優先級===============================
 

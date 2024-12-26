@@ -31,13 +31,13 @@ void RW_right()
   vex::color selectedTeamColor = vex::color::red;
   chassis.set_drive_constants(12, .5, 0.005, 4, 20);
   chassis.set_heading_constants(12, .25, 0.007, 5, 20);
-  chassis.turn_to_angle(312);
+  chassis.turn_to_angle(313);
   //--------------------------------------------------------
   chassis.set_drive_constants(12, 2.0, 0.005, 5, 5);
   chassis.set_heading_constants(12, 1.5, 0.005, 5, 10);
   chassis.drive_distance(3, 313, 10, 10);
   //----------------------------------------------------------------------
-  void autoarm();
+  autoarm();
   //------------------------------------------------------------------
   chassis.drive_distance(-3, 315, 12, 12); // 微退一點
   //---------------------------------------------------------------------
@@ -70,12 +70,9 @@ void RW_right()
   chassis.drive_distance(33, 337, 12, 12);
   chassis.set_drive_constants(12, 1, 0.005, 6, 5);
   chassis.set_heading_constants(12, 1, 0.007, 6, 5);
-  chassis.drive_distance(10, 337, 5, 5);
+  chassis.drive_distance(28, 337, 3, 3);
   //--------排除藍色
-  chassis.drive_with_voltage(2, 2);
-  wait(0.4, sec);
-
-  chassis.drive_distance(-16, 340, 12, 12);
+  chassis.drive_distance(-24, 340, 12, 12);
   wait(0.4, sec);
   chassis.turn_to_angle(90);
   intakedown.stop(brake);
@@ -116,17 +113,15 @@ void R3_right()
   chassis.drive_distance(33, 337, 12, 12);
   chassis.set_drive_constants(12, 1, 0.005, 6, 5);
   chassis.set_heading_constants(12, 1, 0.007, 6, 5);
-  chassis.drive_distance(10, 337, 5, 5);
-
-  //--------------------- 排除藍色--------------------------------
-  chassis.drive_with_voltage(2, 2);
+  chassis.drive_distance(28, 337, 3, 3);
+  //--------排除藍色
+  chassis.drive_distance(-24, 340, 12, 12);
   wait(0.4, sec);
-  //--------------------------------------------------------------
-  chassis.drive_distance(-16, 340, 12, 12);
   chassis.turn_to_angle(90);
   intakedown.stop(brake);
   chassis.drive_distance(24, 75, 12, 12);
   intake.stop(brake);
+  hang1.stop(brake);
 }
 void RW_left()
 {
@@ -134,13 +129,13 @@ void RW_left()
   task notetask(autonoteTask, 0);
   chassis.set_drive_constants(12, .5, 0.005, 4, 20);
   chassis.set_heading_constants(12, .25, 0.007, 5, 20);
-  chassis.turn_to_angle(49);
+  chassis.turn_to_angle(48);
   //--------------------------------------------------------
   chassis.set_drive_constants(12, 2.0, 0.005, 5, 5);
   chassis.set_heading_constants(12, 1.5, 0.005, 5, 10);
-  chassis.drive_distance(3, 49, 10, 10);
+  chassis.drive_distance(3, 48, 10, 10);
   //----------------------------------------------------------------------
-  void autoarm();
+  autoarm();
   //----------------------------------------------------------------------
   chassis.drive_distance(-3, 45, 10, 10); // 微退一點
   //---------------------------------------------------------------------
@@ -151,11 +146,13 @@ void RW_left()
   hang2.spin(forward, 12, volt);
   chassis.set_drive_constants(12, 1, 0.005, 6, 5);
   chassis.set_heading_constants(12, 1, 0.007, 6, 5);
-  chassis.drive_distance(-10, 70, 5, 5);
+  chassis.drive_distance(-8, 70, 5, 5);
+  chassis.drive_with_voltage(-2,-2);
+  wait(0.2, sec);
   intakeCylander = true;
   hang1.stop(coast);
   hang2.stop(coast);
-  wait(0.4, sec);
+  wait(0.2, sec);
   //-----------------------------------------------------------------
   chassis.set_drive_constants(12, 1, 0.005, 5, 20);
   chassis.set_heading_constants(12, 1, 0.005, 5, 20);
@@ -178,18 +175,22 @@ void RW_left()
   chassis.set_drive_constants(12, 1.2, 0.005, 5, 20);
   chassis.set_heading_constants(12, 1.2, 0.005, 5, 20);
   chassis.drive_distance(6, 195, 12, 12);
+  
   //--------------eat 2 red----------------
   chassis.set_drive_constants(12, 1.4, 0.005, 5, 35);
   chassis.set_heading_constants(12, 1.4, 0.005, 5, 35);
   chassis.drive_distance(-25, 215, 12, 12);
+  intake.stop(coast);
   chassis.turn_to_angle(38);
-  intake.spin(forward, 12, volt);
-  chassis.drive_distance(8, 38, 10, 10);
+  intake.spin(forward, 12 ,volt);
+  chassis.drive_distance(10, 38, 8, 8);
 
   //--------------------- 排除藍色--------------------------------
-  chassis.drive_with_voltage(2, 2);
+  intake.spin(forward, 9 ,volt);
+  chassis.drive_distance(12, 38, 8, 8);
+  ;
+  chassis.drive_distance(-21, 38, 12, 12);
   wait(0.4, sec);
-  chassis.drive_distance(-18, 38, 12, 12);
   chassis.drive_distance(-28, 135, 12, 12);
   intake.stop(brake);
   intakedown.stop(brake);
@@ -204,12 +205,16 @@ void R5_left()
   //---------------------------------------------------------------------
   chassis.set_drive_constants(12, 1.2, 0.005, 6, 20);
   chassis.set_heading_constants(12, 1.2, 0.007, 6, 20);
-  chassis.drive_distance(-24.5, 70, 12, 12);
+  chassis.drive_distance(-23.5, 70, 12, 12);
   chassis.set_drive_constants(12, 1, 0.005, 6, 5);
   chassis.set_heading_constants(12, 1, 0.007, 6, 5);
-  chassis.drive_distance(-10, 70, 5, 5);
+  chassis.drive_distance(-8, 70, 5, 5);
+   chassis.drive_with_voltage(-2,-2);
+  wait(0.2, sec);
   intakeCylander = true;
-  wait(0.4, sec);
+  hang1.stop(coast);
+  hang2.stop(coast);
+  wait(0.2, sec);
   //-----------------------------------------------------------------
   chassis.set_drive_constants(12, 1, 0.005, 5, 20);
   chassis.set_heading_constants(12, 1, 0.005, 5, 20);
@@ -232,18 +237,21 @@ void R5_left()
   chassis.set_drive_constants(12, 1.2, 0.005, 5, 20);
   chassis.set_heading_constants(12, 1.2, 0.005, 5, 20);
   chassis.drive_distance(6, 195, 12, 12);
+  
   //--------------eat 2 red----------------
   chassis.set_drive_constants(12, 1.4, 0.005, 5, 35);
   chassis.set_heading_constants(12, 1.4, 0.005, 5, 35);
   chassis.drive_distance(-25, 215, 12, 12);
+  intake.stop(coast);
   chassis.turn_to_angle(38);
-  intake.spin(forward, 12, volt);
-  chassis.drive_distance(8, 38, 10, 10);
+  intake.spin(forward, 12 ,volt);
+  chassis.drive_distance(10, 38, 8, 8);
 
   //--------------------- 排除藍色--------------------------------
-  chassis.drive_with_voltage(2, 2);
+  intake.spin(forward, 12 ,volt);
+  chassis.drive_distance(12, 38, 8, 8);
+  chassis.drive_distance(-21, 38, 12, 12);
   wait(0.4, sec);
-  chassis.drive_distance(-18, 38, 12, 12);
   chassis.drive_distance(-28, 135, 12, 12);
   intake.stop(brake);
   intakedown.stop(brake);
@@ -261,7 +269,7 @@ void BW_left()
   chassis.set_heading_constants(12, 1.5, 0.005, 5, 10);
   chassis.drive_distance(3, 47.5, 10, 10);
   //----------------------------------------------------------------------
-  void autoarm();
+  autoarm();
   //-------------------------------------------------------------------
   chassis.drive_distance(-3, 45, 10, 10); // 微退一點
   //---------------------------------------------------------------------
@@ -284,7 +292,7 @@ void BW_left()
   //----------------------------------------------------------------
   intake.spin(forward, 12, volt);
   intakedown.spin(reverse, 12, volt);
-  chassis.drive_distance(18, 180, 8, 8);
+  chassis.drive_distance(16, 180, 8, 8);
   chassis.turn_to_angle(23);
   //------next--------------------------------
   chassis.set_drive_constants(12, 1.2, 0.005, 6, 20);
@@ -292,14 +300,12 @@ void BW_left()
   chassis.drive_distance(36, 23, 12, 12);
   chassis.set_drive_constants(12, 1, 0.005, 6, 5);
   chassis.set_heading_constants(12, 1, 0.007, 6, 5);
-  chassis.drive_distance(10, 23, 5, 5);
+  chassis.drive_distance(25, 23, 3.5, 3.5);
   //--------------------- 排除--------------------------------
-  chassis.drive_with_voltage(2, 2);
-  wait(0.4, sec);
-  chassis.drive_distance(-34, 20, 12, 12);
+  chassis.drive_distance(-37, 20, 12, 12);
   chassis.turn_to_angle(135);
   intakedown.stop(brake);
-  chassis.drive_distance(-25, 135, 12, 12);
+  chassis.drive_distance(-27, 135, 12, 12);
   intake.stop(brake);
   hang1.stop(brake);
   hang2.stop(brake);
@@ -336,18 +342,17 @@ void B3_left()
   chassis.drive_distance(36, 23, 12, 12);
   chassis.set_drive_constants(12, 1, 0.005, 6, 5);
   chassis.set_heading_constants(12, 1, 0.007, 6, 5);
-  chassis.drive_distance(10, 23, 5, 5);
+  chassis.drive_distance(25, 23, 3.5, 3.5);
   //--------------------- 排除--------------------------------
-  chassis.drive_with_voltage(2, 2);
-  wait(0.4, sec);
-  chassis.drive_distance(-27, 20, 12, 12);
+  chassis.drive_distance(-33, 20, 12, 12);
   chassis.turn_to_angle(135);
   intakedown.stop(brake);
-  chassis.drive_distance(-26, 135, 12, 12);
+  chassis.drive_distance(-25, 135, 12, 12);
   intake.stop(brake);
   hang1.stop(brake);
   hang2.stop(brake);
 }
+
 //--------------------------------------------------------------
 
 void BW_right()
@@ -363,7 +368,7 @@ void BW_right()
   chassis.set_heading_constants(12, 1.5, 0.005, 5, 10);
   chassis.drive_distance(3, 316, 10, 10);
   //----------------------------------------------------------------------
-  void autoarm();
+  autoarm();
   //---------------------------------------------------------------------
   chassis.drive_distance(-3, 315, 10, 10); // 微退一點
   //---------------------------------------------------------------------
@@ -407,12 +412,12 @@ void BW_right()
   chassis.drive_distance(-20, 145, 12, 12);
   chassis.turn_to_angle(322);
   intake.spin(forward, 12, volt);
-  chassis.drive_distance(9, 322, 10, 10);
+  //--------------------- 排除藍色--------------------------------
+  chassis.drive_distance(28, 322, 3.5, 3.5);
+  wait(0.5,sec);
 
   //--------------------- 排除藍色--------------------------------
-  chassis.drive_with_voltage(2, 2);
-  wait(0.4, sec);
-  chassis.drive_distance(-18, 322, 12, 12);
+  chassis.drive_distance(-20, 322, 12, 12);
   chassis.drive_distance(-28, 225, 12, 12);
   intake.stop(brake);
   intakedown.stop(brake);
@@ -462,12 +467,11 @@ void B5_right()
   chassis.drive_distance(-20, 145, 12, 12);
   chassis.turn_to_angle(322);
   intake.spin(forward, 12, volt);
-  chassis.drive_distance(9, 322, 10, 10);
+  chassis.drive_distance(28, 322, 3.5, 3.5);
+  wait(0.5,sec);
 
   //--------------------- 排除藍色--------------------------------
-  chassis.drive_with_voltage(2, 2);
-  wait(0.4, sec);
-  chassis.drive_distance(-18, 322, 12, 12);
+  chassis.drive_distance(-20, 322, 12, 12);
   chassis.drive_distance(-28, 225, 12, 12);
   intake.stop(brake);
   intakedown.stop(brake);
@@ -476,49 +480,7 @@ void B5_right()
 
 void skills()
 {
-
-  //--------------------------------------------------------
-  chassis.set_drive_constants(12, 2.0, 0.005, 5, 5);
-  chassis.set_heading_constants(12, 1.5, 0.005, 5, 10);
-  chassis.drive_distance(20, 270, 12, 12); // 微退一點
-  /*/-----------------------------------------------
-  chassis.set_drive_constants(12, 0.8, 0.005, 5, 5);
-  chassis.set_heading_constants(12, 0.8, 0.005, 5, 10);
-  chassis.turn_to_angle(90);
-  /
-  //---------------------------------------------------------------------
-  chassis.set_drive_constants(5, 1.2, 0.005, 6, 20);
-  chassis.set_heading_constants(5, 1.2, 0.007, 6, 20);
-  chassis.drive_distance(-20,90,5,5);
-  intakeCylander = true;
-  wait(0.3,sec);
-  chassis.turn_to_angle(225);
-  //-----------------------------------------------------------
-  chassis.set_drive_constants(12, 2.0, 0.005, 5, 5);
-  chassis.set_heading_constants(12, 1.5, 0.005, 5, 10);
-  intake.spin(forward,12,volt);
-  intakedown.spin(reverse,12,volt);
-  chassis.drive_distance(35,225,12,12);
-  chassis.turn_to_angle(180);
-  chassis.set_drive_constants(6.5, 1.2, 0.005, 6, 20);
-  chassis.set_heading_constants(6.5, 1.2, 0.007, 6, 20);
-  intake.stop(coast);
-  chassis.drive_distance(18,180,6.5,6.5);
-  // -------------------------------------
-           hang1.spin(forward, 12, volt);
-           wait(0.4,sec);
-           hang1.setMaxTorque(20,percent);
-           hang1.spin(forward, 5, volt);
-           wait(0.4,sec);
-           hang1.resetPosition() ;
-           wait(0.1,sec);
-           hang1.setMaxTorque(100,percent);
-           hang1.spinToPosition(-58, degrees, 35, rpm, true);
- chassis.turn_to_angle(270);
- intake.spin(forward,12,volt);
- intakedown.stop(coast);
- chassis.drive_distance(12,270,12,12);
-*/
+  
 }
 
 void odom_test()
