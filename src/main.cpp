@@ -121,11 +121,7 @@ void pre_auton(void) {
   Inertial.calibrate();
   while (Inertial.isCalibrating()) {
     // 等待慣性測量單元校準完成
-     whitelight = 1 ;
-     wait(0.05,sec);
-     whitelight = 0 ;
-     wait(0.05,sec);
-
+whitelight =  0 ;
   };
   Controller1.Screen.print("ok");
   redlight = 1 ;
@@ -170,12 +166,12 @@ void pre_auton(void) {
         if (i == 1) Brain.Screen.printAt(x + 10, y + 60, "R3_right ");
         if (i == 2) Brain.Screen.printAt(x + 10, y + 60, "RW_left");
         if (i == 3) Brain.Screen.printAt(x + 10, y + 60, "R5_left");
-        if (i == 4) Brain.Screen.printAt(x + 10, y + 60, "skills ");
+        if (i == 4) Brain.Screen.printAt(x + 10, y + 60, "R_SOLO");
         if (i == 5) Brain.Screen.printAt(x + 10, y + 60, "BW_left");
         if (i == 6) Brain.Screen.printAt(x + 10, y + 60, "B3_left");
         if (i == 7) Brain.Screen.printAt(x + 10, y + 60, "BW_right");
-        if (i == 8) Brain.Screen.printAt(x + 10, y + 60, "B5_right");
-        if (i == 9) Brain.Screen.printAt(x + 10, y + 60, "        ");
+        if (i == 8) Brain.Screen.printAt(x + 10, y + 60, "B_SOLO");
+        if (i == 9) Brain.Screen.printAt(x + 10, y + 60, "B_17022A");
       }
     }
 
@@ -241,7 +237,7 @@ void autonomous(void) {
     B5_right();
     break;
   case 9:
-    odom_test();
+    B_17022A();
     break;
   }
   airspace = true; // 确保 airspace 被设置为 true
@@ -375,6 +371,8 @@ void usercontrol(void)
   {
     intakeCylander = 1;  
     airspace = true;
+    hang1.spin(forward, 6, volt);
+    wait(0.2,sec);
     hang1.resetPosition();
   }
 
@@ -395,6 +393,21 @@ void usercontrol(void)
   //-----------------------------------------------------
   while(1)
   {
+            if (Controller1.ButtonLeft.pressing())
+        {
+            selectedTeamColor = vex::color::red; // 紅隊
+            Optical.setLightPower(100, percent); // 開啟燈光
+        }
+        else if (Controller1.ButtonRight.pressing())
+        {
+            selectedTeamColor = vex::color::blue; // 藍隊
+            Optical.setLightPower(100, percent);  // 開啟燈光
+        }
+        else if (Controller1.ButtonUp.pressing())
+        {
+            selectedTeamColor = vex::color::black; // 無隊伍（禁用）
+            Optical.setLightPower(0, percent);     // 關閉燈光
+        }
     chassis.control_tank(100); //底盤控制
   }   
   wait(20, msec); 

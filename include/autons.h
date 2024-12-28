@@ -15,6 +15,7 @@ void BW_right();
 void B3_left();
 void BW_left();
 void B5_right();
+void B_17022A();
 
 void skills();
 void PIDtest();
