@@ -1,5 +1,5 @@
 # Team 88168A Robotics Project
-
+<img src="path/VEX_RED_SOLO.png" alt="專案 Logo" width="200" />
 ## Introduction
 
 Welcome to Team 88168A's robotics project repository. This repository contains the source code for our team's robot used in various robotics competitions. We utilize the VEX Robotics platform, and our code is built to control the robot's movement and actions during matches.
