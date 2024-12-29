@@ -1,79 +1,85 @@
 # Team 88168A Robotics Project
+
 ## Introduction
 
-Welcome to Team 88168A's robotics project repository. This repository contains the source code for our team's robot used in various robotics competitions. We utilize the VEX Robotics platform, and our code is built to control the robot's movement and actions during matches.
+Welcome to **Team 88168A's Robotics Project** repository! This repository contains the source code for our team's robot, which is used in various robotics competitions. We leverage the **VEX Robotics platform** for both the hardware and software, with our code built to control the robot's movements and actions during matches.
 
-Our team is focused on creating efficient and innovative solutions for autonomous and driver-controlled operations, integrating advanced controls, sensors, and feedback loops to ensure smooth functionality in competitive environments.
+Our team is dedicated to developing **efficient**, **innovative**, and **competitive solutions** for both autonomous and driver-controlled operations. We integrate **advanced control systems**, **sensors**, and **feedback loops** to ensure smooth and effective functionality in competitive environments.
 
 ## Project Structure
 
-This project uses the VEX Robotics V5 system, and our code is written in C++ using the VEX V5 C++ API. The repository contains the following key components:
+This project is based on the **VEX Robotics V5 system**, with the code written in **C++** using the VEX V5 C++ API. The repository is organized into several key components to manage the robot's functions and capabilities:
 
-- **Autonomous Code**: The code that runs when the robot is on its own during a match. It includes functions for handling the robot’s movements, sensors, and actions based on pre-programmed strategies.
-- **Driver Control Code**: The code that responds to user inputs via the controller, allowing real-time control of the robot's motors, sensors, and actuators.
-- **Sensor Integration**: We use various sensors (e.g., optical sensors, encoders) for autonomous navigation and feedback during the match.
-- **Subsystems**: The robot includes several subsystems, such as the drivetrain, intake, and hang system, each controlled independently for optimal performance.
+- **Autonomous Code**: This code runs when the robot is operating autonomously, i.e., without any input from the driver. It includes functions to control the robot’s movements, sensor inputs, and actions, based on pre-programmed strategies.
+- **Driver Control Code**: This section handles inputs from the controller, allowing real-time control over the robot’s motors, sensors, and actuators during the driver-controlled period of a match.
+- **Sensor Integration**: We utilize various sensors, such as optical sensors and encoders, to enhance the robot's autonomous navigation and provide feedback during the match for better decision-making.
+- **Subsystems**: The robot includes multiple subsystems, including the drivetrain, intake system, and arm mechanism. These subsystems are controlled independently to optimize performance during a match.
 
-## Features
+## Key Features
 
-- **Autonomous Movement**: The robot moves autonomously using pre-programmed strategies, including navigation, object manipulation, and goal scoring.
-- **Tank Drive Control**: The robot is controlled using tank drive, where the left and right motors are controlled based on joystick inputs.
-- **Arm Control**: A custom arm control logic allows precise movement and positioning based on sensor feedback.
-- **Sensor Feedback**: The robot uses sensors to detect objects, adjust its course, and interact with the environment.
-  
+- **Autonomous Movement**: The robot can move and interact with the environment based on pre-programmed strategies, such as navigating the field, manipulating objects, and scoring goals autonomously.
+- **Tank Drive Control**: The robot uses tank drive, where the left and right motors are controlled by joystick inputs. The left joystick controls the left side of the robot, and the right joystick controls the right side.
+- **Arm Control**: A custom arm control logic ensures precise movement and positioning of the robot’s arm, based on sensor feedback, allowing the robot to interact with game elements effectively.
+- **Sensor Feedback**: The robot uses sensors to detect objects, adjust its path, and interact with the environment. For example, sensors are used to detect nearby obstacles or the position of game pieces.
+
 ## Key Components and Functions
 
-- `control_tank()`: This function controls the left and right drive motors based on the joystick inputs from the controller, with deadband adjustments to ensure smooth control.
-- `autonoteTask()`: Runs autonomously to detect and interact with objects based on the selected team color, controlling the intake and other actions.
-- `hangControlTask()`: Controls the robot's hanging mechanism during autonomous or driver control, responding to button inputs to change the arm's position.
-- `position_track_task()`: Handles real-time position tracking to ensure the robot maintains its heading and position during the match.
+Here are some of the important functions implemented in our code:
+
+- **`control_tank()`**: This function controls the left and right drive motors based on joystick inputs from the controller, with deadband adjustments for smooth control.
+- **`autonoteTask()`**: Handles autonomous behaviors, such as detecting and interacting with objects based on the selected team color. It controls the intake system and other mechanisms for pre-programmed strategies.
+- **`hangControlTask()`**: Manages the robot’s hanging mechanism during autonomous or driver control, responding to button inputs to adjust the position of the robot’s arm.
+- **`position_track_task()`**: Ensures the robot maintains its heading and position throughout the match using real-time tracking.
+- **`seenote_task()`**: Detects the presence of blue and red rings, using the robot’s pneumatic system to interact with them automatically.
+- **`teleseemobilegoal_task()`**: Utilizes optical sensors to detect the distance to a mobile goal, changing the LED indicator lights accordingly: flashing lights indicate proximity, a green light shows that pneumatic pressure is off, and a red light means pneumatic pressure is on.
 
 ## Setup
 
-1. Clone this repository to your local machine.
-2. Open the project in VEXcode V5 or your preferred C++ IDE for VEX Robotics.
-3. Connect your VEX V5 robot to your computer.
-4. Build and download the code to the robot's brain.
+To get started with this project, follow these steps:
+
+1. **Clone the repository** to your local machine.
+2. **Open the project** in **VEXcode V5** or your preferred C++ IDE for VEX Robotics.
+3. **Connect the VEX V5 robot** to your computer using a USB cable.
+4. **Build and download the code** to the robot's brain.
 
 ## Usage
 
-### Autonomous path
+### Autonomous Path
 
-- The robot will automatically perform pre-defined tasks when the match starts. The behavior of the robot during autonomous mode is based on the selected team color and the programmed strategy.
- - RED_SOLO_Alliance stack + 2ring + 1ring + 2goal + AWP                                             
-<div style="display: flex; justify-content: space-between;">
-  <img src="path/VEX_RED_SOLO.png" alt="RED SOLO" width="300" style="margin-right: 20px;" />                                                                                                          
-</div>
+The robot automatically performs pre-defined tasks at the start of the match, based on the selected team color and programmed strategy. Some example strategies include:
 
- - RED_SOLO_Alliance stack + 2ring + 1ring + 2goal + AWP  
-<div style="display: flex; justify-content: space-between;">                                                                                                        
-  <img src="path/VEX_RW_right.png" alt="RED R5 or RW" width="300" />
-</div>
+- **RED_SOLO_Alliance**: The robot autonomously stacks rings, collects and scores them, and manipulates mobile goals. This includes stacking 2 rings, 1 ring, and 2 goals, followed by the Autonomous Win Position (AWP).
+  <div style="display: flex; justify-content: space-between;">
+    <img src="path/VEX_RED_SOLO.png" alt="RED SOLO" width="300" style="margin-right: 20px;" />
+  </div>
 
-
-
-
+- **RED_SOLO_Alliance (Alternate)**: The robot stacks 4 rings, scores a goal, or stacks 5 rings and scores a goal. This strategy ensures flexibility and adaptability during a match.
+  <div style="display: flex; justify-content: space-between;">
+    <img src="path/VEX_RW_right.png" alt="RED R5 or RW" width="300" />
+  </div>
 
 ### Driver Control
 
-- Use the VEX controller's joystick inputs to control the robot’s movement in tank drive mode. The left joystick controls the left side of the robot, and the right joystick controls the right side.
+In the driver-controlled period of the match, the robot is controlled using the **VEX controller**. The joystick inputs control the movement of the robot:
+
+- The **left joystick** controls the left side of the robot.
+- The **right joystick** controls the right side.
+  
+Additionally, the intake and arm systems can be controlled with specific buttons on the controller for tasks like lifting, lowering, or positioning objects.
 
 ### Arm and Intake Control
 
-- The robot's intake and arm control are handled through button presses on the controller, with specific logic for different actions like lifting or positioning the robot's arm.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+The intake and arm systems are controlled using buttons on the VEX controller. These systems are designed to efficiently handle and manipulate objects during the match, ensuring precise movement and positioning based on sensor feedback.
 
 ## Acknowledgements
 
-- VEX Robotics
-- HappyrobotTaipei
-- Team 88168A for their hard work and dedication to the project.
-- R.T.1.3
-- Lego Lau mo 
+- **VEX Robotics** for their hardware and software support.
+- **HappyrobotTaipei** for their contributions to the development.
+- **Team 88168A** for their hard work, dedication, and passion for robotics.
+- Special thanks to **R.T.1.3**, **Lego Lau mo**, and **Teng Lau** for their support.
 
 ---
 
-Feel free to explore, modify, and contribute to the repository as we continue to enhance our robot's capabilities for future competitions.
+Feel free to explore, modify, and contribute to this repository as we continue to enhance our robot’s capabilities for future competitions. Thank you for your interest in Team 88168A’s robotics project!
+
+---
