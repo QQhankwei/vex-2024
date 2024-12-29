@@ -16,7 +16,6 @@ extern controller Controller1;
 extern motor intake;
 extern motor intakedown;
 extern motor hang1;
-extern motor hang2;
 extern digital_out redlight;
 extern digital_out whitelight;
 extern digital_out intakeCylander;

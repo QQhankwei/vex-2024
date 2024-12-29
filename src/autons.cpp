@@ -62,7 +62,7 @@ void RW_right()
   intakedown.spin(reverse, 12, volt);
   chassis.drive_distance(19, 190, 8, 8);
   hang1.spin(forward, 6, volt);
-  hang2.spin(forward, 6, volt);
+  
   chassis.turn_to_angle(337);
   hang1.resetPosition();
   //------next---------
@@ -126,6 +126,7 @@ void R3_right()
 }
 void RW_left()
 {
+  wait(200,msec);
   vex::color selectedTeamColor = vex::color::red;
   task notetask(autonoteTask, 0);
   chassis.set_drive_constants(12, .5, 0.005, 4, 20);
@@ -144,13 +145,13 @@ void RW_left()
   chassis.set_heading_constants(12, 1.2, 0.007, 6, 20);
   chassis.drive_distance(-24.5, 71, 12, 12);
   hang1.spin(forward, 12, volt);
-  hang2.spin(forward, 12, volt);
+  
   chassis.set_drive_constants(12, 1, 0.005, 6, 5);
   chassis.set_heading_constants(12, 1, 0.007, 6, 5);
   chassis.drive_distance(-10, 70, 5, 5);
   intakeCylander = true;
   hang1.stop(coast);
-  hang2.stop(coast);
+  
   wait(0.4, sec);
   //-----------------------------------------------------------------
   chassis.set_drive_constants(12, 0.8, 0.005, 5, 10);
@@ -174,21 +175,23 @@ void RW_left()
   chassis.turn_to_angle(195);
   chassis.set_drive_constants(12, 1.2, 0.005, 5, 20);
   chassis.set_heading_constants(12, 1.2, 0.005, 5, 20);
-  chassis.drive_distance(8, 195, 12, 12);
+  chassis.drive_distance(6, 195, 12, 12);
   
   //--------------eat 2 red----------------
   chassis.set_drive_constants(12, 1.4, 0.005, 5, 35);
   chassis.set_heading_constants(12, 1.4, 0.005, 5, 35);
   chassis.drive_distance(-20, 223, 12, 12);
-  intake.stop(coast);
-  chassis.turn_to_angle(36);
+  //intake.stop(coast);
+  //chassis.turn_to_angle(36);
   intake.spin(forward, 12 ,volt);
+  intakedown.spin(reverse,12,volt);
   //--------------------- 排除藍色--------------------------------
-  chassis.drive_distance(29, 36, 3, 3);
+  /*chassis.drive_distance(29, 36, 3, 3);
   chassis.drive_distance(-19, 35, 7, 7);
+  hang1.spinToPosition(-50,deg,true);
   chassis.drive_distance(-28, 135, 7, 7);
   intake.stop(brake);
-  intakedown.stop(brake);
+  intakedown.stop(brake);*/
 }
 void R5_left()
 {
@@ -206,7 +209,7 @@ void R5_left()
   chassis.drive_distance(-10.5, 70, 5, 5);
   intakeCylander = true;
   hang1.stop(coast);
-  hang2.stop(coast);
+  
   wait(0.4, sec);
   //-----------------------------------------------------------------
  //-----------------------------------------------------------------
@@ -268,13 +271,13 @@ void BW_left()
   chassis.set_heading_constants(12, 1.2, 0.007, 6, 20);
   chassis.drive_distance(-22.5, 70, 12, 12);
   hang1.spin(forward, 12, volt);
-  hang2.spin(forward, 12, volt);
+  
   chassis.set_drive_constants(12, 1, 0.005, 6, 5);
   chassis.set_heading_constants(12, 1, 0.007, 6, 5);
   chassis.drive_distance(-10, 70, 5, 5);
   intakeCylander = true;
   hang1.stop(coast);
-  hang2.stop(coast);
+  
   wait(0.4, sec);
   //-----------------------------------------------------------------
   chassis.set_drive_constants(12, 1, 0.005, 5, 20);
@@ -299,7 +302,7 @@ void BW_left()
   chassis.drive_distance(-27, 135, 12, 12);
   intake.stop(brake);
   hang1.stop(brake);
-  hang2.stop(brake);
+  
 }
 //--------------------------------------------------------------
 void B3_left()
@@ -344,7 +347,7 @@ void B3_left()
   chassis.drive_distance(-25, 135, 12, 12);
   intake.stop(brake);
   hang1.stop(brake);
-  hang2.stop(brake);
+  
 
   hang1.stop(hold);
 }
@@ -353,6 +356,7 @@ void B3_left()
 
 void BW_right()
 {
+  wait(200,msec);
   vex::color selectedTeamColor = vex::color::blue;
   task notetask(autonoteTask, 0);
   chassis.set_drive_constants(10, .5, 0.005, 4, 20);
@@ -371,13 +375,13 @@ void BW_right()
   chassis.set_heading_constants(12, 1.2, 0.007, 6, 20);
   chassis.drive_distance(-24.5, 290, 12, 12);
   hang1.spin(forward, 12, volt);
-  hang2.spin(forward, 12, volt);
+  
   chassis.set_drive_constants(12, 1, 0.005, 6, 5);
   chassis.set_heading_constants(12, 1, 0.007, 6, 5);
   chassis.drive_distance(-10, 290, 5, 5);
   intakeCylander = true;
   hang1.stop(coast);
-  hang2.stop(coast);
+  
   wait(0.4, sec);
   //-----------------------------------------------------------------
   chassis.set_drive_constants(12, 1, 0.005, 5, 20);
@@ -405,11 +409,12 @@ void BW_right()
   chassis.set_drive_constants(12, 1.4, 0.005, 5, 35);
   chassis.set_heading_constants(12, 1.4, 0.005, 5, 35);
   chassis.drive_distance(-20, 145, 12, 12);
-  intake.stop(brake);
-  chassis.turn_to_angle(322);
+ // intake.stop(brake);
+  //chassis.turn_to_angle(322);
   intake.spin(forward, 12, volt);
+  intakedown.spin(reverse,12,volt);
   //--------------------- 排除藍色--------------------------------
-  chassis.drive_distance(28, 322, 3.5, 3.5);
+ /* chassis.drive_distance(28, 322, 3.5, 3.5);
   wait(0.5,sec);
 
   //--------------------- 排除藍色--------------------------------
@@ -418,7 +423,7 @@ void BW_right()
   chassis.drive_distance(-28, 225, 12, 12);
   intake.stop(brake);
   intakedown.stop(brake);
-  hang1.stop(hold);
+  hang1.stop(hold);*/
 }
 //--------------------------------------------------------------
 void B5_right()//B_solo
@@ -441,13 +446,13 @@ void B5_right()//B_solo
   chassis.set_heading_constants(12, 1.2, 0.007, 6, 20);
   chassis.drive_distance(-24.5, 290, 12, 12);
   hang1.spin(forward, 12, volt);
-  hang2.spin(forward, 12, volt);
+  
   chassis.set_drive_constants(12, 1, 0.005, 6, 5);
   chassis.set_heading_constants(12, 1, 0.007, 6, 5);
   chassis.drive_distance(-10, 290, 6, 6);
   intakeCylander = true;
   hang1.stop(coast);
-  hang2.stop(coast);
+  
   wait(0.2, sec);
   //-----------------------------------------------------------------
   intake.spin(forward, 12, volt);
@@ -509,13 +514,11 @@ void skills()
   chassis.set_heading_constants(12, 1.2, 0.007, 6, 20);
   chassis.drive_distance(-24.5, 71, 12, 12);
   hang1.spin(forward, 12, volt);
-  hang2.spin(forward, 12, volt);
   chassis.set_drive_constants(12, 1, 0.005, 6, 5);
   chassis.set_heading_constants(12, 1, 0.007, 6, 5);
   chassis.drive_distance(-10, 70, 5, 5);
   intakeCylander = true;
-  hang1.stop(coast);
-  hang2.stop(coast);
+  hang1.stop(coast); 
   wait(0.2, sec);
   //-----------------------------------------------------------------
   intake.spin(forward, 12, volt);
@@ -572,13 +575,13 @@ void B_17022A(){
   chassis.set_heading_constants(12, 1.2, 0.007, 6, 20);
   chassis.drive_distance(-24.5, 290, 12, 12);
   hang1.spin(forward, 12, volt);
-  hang2.spin(forward, 12, volt);
+  
   chassis.set_drive_constants(12, 1, 0.005, 6, 5);
   chassis.set_heading_constants(12, 1, 0.007, 6, 5);
   chassis.drive_distance(-10, 290, 4.5, 4.5);
   intakeCylander = true;
   hang1.stop(coast);
-  hang2.stop(coast);
+  
   wait(0.4, sec);
   //-----------------------------------------------------------------
   chassis.set_drive_constants(12, 1, 0.005, 5, 20);
