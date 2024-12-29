@@ -80,8 +80,8 @@ The intake and arm systems are controlled using buttons on the VEX controller. T
 |Subsystem|Port:ID|Note|
 |--|--|--|
 |Inertial|5|gyro|
-|Optical||7|see ring|
-|Optical_go||12|see moblie go|
+|Optical|7|see ring|
+|Optical_go|12|see moblie go|
 |Vision|13,15|light support|
 |light|C,D|redlight,whitelight|
 |Pneumatic cylinder|A,B,G|pushCylinder,intakeCylander,hookCylinder|
