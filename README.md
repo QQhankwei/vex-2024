@@ -43,7 +43,7 @@ This project uses the VEX Robotics V5 system, and our code is written in C++ usi
 - RED_SOLO_Alliance stack + 2ring + 1ring + 2goal + AWP                                             -RED_Alliance stack + 4ring + 2goal
 <div style="display: flex; justify-content: space-between;">
   <img src="path/VEX_RED_SOLO.png" alt="RED SOLO" width="300" style="margin-right: 20px;" />
-                                                                  
+  -                                                                                                             
   <img src="path/VEX_RW_right.png" alt="RED R5 or RW" width="300" />
 </div>
 
