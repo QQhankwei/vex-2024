@@ -69,9 +69,24 @@ The intake and arm systems are controlled using buttons on the VEX controller. T
 
 ### Motors
 
-|Subsystem|Type|Name|ID|Note|
+|Subsystem|Type|Name|Port:ID|Note|
 |--|--|--|--|--|
 |Chassis|11W motor|Drive|1,3,4,6,9,10|L1,L2,L3,R1,R2,R3|
+|Intake|5.5W motor|Drive|11,14|down,mid|
+|Arm|11W motor|Drive|19|hang1|
+
+### Sensors 
+
+|Subsystem|Port:ID|Note|
+|--|--|--|
+|Inertial|5|gyro|
+|Optical||7|see ring|
+|Optical_go||12|see moblie go|
+|Vision|13,15|light support|
+|light|C,D|redlight,whitelight|
+|Pneumatic cylinder|A,B,G|pushCylinder,intakeCylander,hookCylinder|
+
+
 
 ## Acknowledgements
 
