@@ -47,19 +47,11 @@ To get started with this project, follow these steps:
 ### Autonomous Path
 
 The robot automatically performs pre-defined tasks at the start of the match, based on the selected team color and programmed strategy. Some example strategies include:
-||Alliance stack4or5 ring|**Eat3Auto** :trophy:|StagePos|
-|--|--|--|--|
+||Alliance stack4or5 ring|**solo AWP ** :trophy:|
+|--|--|--|
 ||<img src="path/VEX_RED_SOLO.png" alt="RED SOLO" width="300" style="margin-right: 20px;" />|<img src="path/VEX_RW_right.png" alt="RED R5 or RW" width="300" />
-|Average Notes|2~3|4|2~3|
-- **RED_SOLO_Alliance**: The robot autonomously stacks rings, collects and scores them, and manipulates mobile goals. This includes stacking 2 rings, 1 ring, and 2 goals, followed by the Autonomous Win Position (AWP).
-  <div style="display: flex; justify-content: space-between;">
-    <img src="path/VEX_RED_SOLO.png" alt="RED SOLO" width="300" style="margin-right: 20px;" />
-  </div>
-
-- **RED_SOLO_Alliance (Alternate)**: The robot stacks 4 rings, scores a goal, or stacks 5 rings and scores a goal. This strategy ensures flexibility and adaptability during a match.
-  <div style="display: flex; justify-content: space-between;">
-    <img src="path/VEX_RW_right.png" alt="RED R5 or RW" width="300" />
-  </div>
+|Average Rings|4~5|3|
+|Average Mobile goals|1|2|
 
 ### Driver Control
 
