@@ -31,7 +31,7 @@ Here are some of the important functions implemented in our code:
 - **`hangTask()`**: Manages the robot’s hanging mechanism during autonomous or driver control, responding to button inputs to adjust the position of the robot’s arm.
 - **`position_track_task()`**: Ensures the robot maintains its heading and position throughout the match using real-time tracking.
 - **`momogo_task()`**: Utilizes optical sensors to detect the distance to a mobile goal, changing the LED indicator lights accordingly: flashing lights indicate proximity, a green light shows that pneumatic pressure is off, and a red light means pneumatic pressure is on.
-- **`intake_task()`**: This function controls the robot's intake system. It manages the intake motors to pick up game pieces (such as rings or cubes) and ensures proper operation based on the selected mode. The function includes logic for starting and stopping the intake motors, adjusting motor speeds, and using sensor feedback to detect the presence of game pieces for efficient collection and handling. The task can be triggered based on button presses from the controller, allowing the driver to control the intake system in real-time.
+- **`intake_task()`**: This function controls the robot's intake system based on the controller's button inputs. It uses R1 to activate the intake motor for forward rotation (to pick up game pieces) and R2 to activate the motor for reverse rotation (to eject or reverse the intake direction). The function adjusts the motor speed accordingly and ensures smooth operation of the intake system, allowing the driver to control the intake's direction in real-time during the match.
 
 ## Setup
 
