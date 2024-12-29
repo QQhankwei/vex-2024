@@ -27,11 +27,11 @@ This project is based on the **VEX Robotics V5 system**, with the code written i
 Here are some of the important functions implemented in our code:
 
 - **`control_tank()`**: This function controls the left and right drive motors based on joystick inputs from the controller, with deadband adjustments for smooth control.
-- **`autonoteTask()`**: Handles autonomous behaviors, such as detecting and interacting with objects based on the selected team color. It controls the intake system and other mechanisms for pre-programmed strategies.
-- **`hangControlTask()`**: Manages the robot’s hanging mechanism during autonomous or driver control, responding to button inputs to adjust the position of the robot’s arm.
+- **`noteTask()`**: Handles autonomous behaviors, such as detecting and interacting with objects based on the selected team color. It controls the intake system and other mechanisms for pre-programmed strategies.
+- **`hangTask()`**: Manages the robot’s hanging mechanism during autonomous or driver control, responding to button inputs to adjust the position of the robot’s arm.
 - **`position_track_task()`**: Ensures the robot maintains its heading and position throughout the match using real-time tracking.
-- **`seenote_task()`**: Detects the presence of blue and red rings, using the robot’s pneumatic system to interact with them automatically.
-- **`teleseemobilegoal_task()`**: Utilizes optical sensors to detect the distance to a mobile goal, changing the LED indicator lights accordingly: flashing lights indicate proximity, a green light shows that pneumatic pressure is off, and a red light means pneumatic pressure is on.
+- **`momogo_task()`**: Utilizes optical sensors to detect the distance to a mobile goal, changing the LED indicator lights accordingly: flashing lights indicate proximity, a green light shows that pneumatic pressure is off, and a red light means pneumatic pressure is on.
+- **`intake_task()`**: This function controls the robot's intake system. It manages the intake motors to pick up game pieces (such as rings or cubes) and ensures proper operation based on the selected mode. The function includes logic for starting and stopping the intake motors, adjusting motor speeds, and using sensor feedback to detect the presence of game pieces for efficient collection and handling. The task can be triggered based on button presses from the controller, allowing the driver to control the intake system in real-time.
 
 ## Setup
 
