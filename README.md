@@ -40,8 +40,8 @@ This project uses the VEX Robotics V5 system, and our code is written in C++ usi
 ### Autonomous path
 
 - The robot will automatically perform pre-defined tasks when the match starts. The behavior of the robot during autonomous mode is based on the selected team color and the programmed strategy.
+- -RED_SOLO_Alliance stack + 2ring + 1ring + 2goal + AWP
 <div style="display: flex; justify-content: space-between;">
-  -RED_SOLO_Alliance stack + 2ring + 1ring + 2goal + AWP
   <img src="path/VEX_RED_SOLO.png" alt="RED SOLO" width="300" style="margin-right: 20px;" />
   -RED_Alliance stack + 4ring + 2goal
   <img src="path/VEX_RW_right.png" alt="RED R5 or RW" width="300" />
