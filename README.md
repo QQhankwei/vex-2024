@@ -47,7 +47,7 @@ To get started with this project, follow these steps:
 ### Autonomous Path
 
 The robot automatically performs pre-defined tasks at the start of the match, based on the selected team color and programmed strategy. Some example strategies include:
-||Alliance stack 4or5 ring|**solo AWP ** :trophy:|
+||Alliance stack 4or5 ring|** Solo AWP ** :trophy:|
 |--|--|--|
 ||<img src="path/VEX_RED_SOLO.png" alt="RED SOLO" width="300" style="margin-right: 20px;" />|<img src="path/VEX_RW_right.png" alt="RED R5 or RW" width="300" />
 |Average Rings|4~5|3|
