@@ -47,7 +47,7 @@ To get started with this project, follow these steps:
 ### Autonomous Path
 
 The robot automatically performs pre-defined tasks at the start of the match, based on the selected team color and programmed strategy. Some example strategies include:
-||Alliance stack4or5 ring|**solo AWP ** :trophy:|
+||Alliance stack 4or5 ring|**solo AWP ** :trophy:|
 |--|--|--|
 ||<img src="path/VEX_RED_SOLO.png" alt="RED SOLO" width="300" style="margin-right: 20px;" />|<img src="path/VEX_RW_right.png" alt="RED R5 or RW" width="300" />
 |Average Rings|4~5|3|
@@ -65,6 +65,13 @@ Additionally, the intake and arm systems can be controlled with specific buttons
 ### Arm and Intake Control
 
 The intake and arm systems are controlled using buttons on the VEX controller. These systems are designed to efficiently handle and manipulate objects during the match, ensuring precise movement and positioning based on sensor feedback.
+## Onboard Electronics
+
+### Motors
+
+|Subsystem|Type|Name|ID|Note|
+|--|--|--|--|--|
+|Chassis|11W motor|Drive|1,3,4,6,9,10|L1,L2,L3,R1,R2,R3|
 
 ## Acknowledgements
 
